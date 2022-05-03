@@ -1,0 +1,14 @@
+
+### test auth endpoint
+
+# register new user
+
+POST http://localhost:4444/api/auth/register
+Content-Type: application/json
+
+{
+ "username": "aaa",
+    "email": "aaa@email.com",
+    "password": "aaaaaa",
+    "isAdmin": false
+}

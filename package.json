@@ -1,0 +1,24 @@
+{
+  "name": "chat-app-dci",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Robert-Sobolewski/chat-app-dci.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Robert-Sobolewski/chat-app-dci/issues"
+  },
+  "homepage": "https://github.com/Robert-Sobolewski/chat-app-dci#readme",
+  "dependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "bcrypt": "^5.0.1"
+  }
+}
