@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
     "start": "run-p start:client start:server",
     "start:client": "npm run dev --workspace=client",
     "start:server": "npm run start --workspace=server"
   },
-  "workspaces":[
+  "workspaces": [
     "client",
     "server"
   ],
@@ -25,8 +26,29 @@
   },
   "homepage": "https://github.com/Robert-Sobolewski/chat-app-dci#readme",
   "dependencies": {
+    "@babel/preset-env": "^7.17.10",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.2.0",
+    "@testing-library/user-event": "^14.1.1",
     "@types/bcrypt": "^5.0.0",
     "bcrypt": "^5.0.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.5.1",
     "npm-run-all": "^4.1.5"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.5.0",
+    "typescript": "^4.6.4"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest-setup.ts"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|sass|scss)$": "identity-obj-proxy"
+    }
   }
 }

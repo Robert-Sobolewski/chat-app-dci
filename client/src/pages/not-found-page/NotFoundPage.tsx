@@ -3,7 +3,9 @@ import "./NotFoundPage.scss";
 const NotFoundPage = () => {
   return (
     <Fragment>
-      <article className="not-found-page"></article>
+      <article className="not-found-page">
+        <h1>Error 404 - Page Not Found</h1>
+      </article>
     </Fragment>
   );
 };
