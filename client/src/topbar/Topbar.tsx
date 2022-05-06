@@ -1,53 +1,49 @@
-import React from "react";
-import { FormEvent } from "react";
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import { useState, useEffect } from "react";
+import './topbar.scss';
+import React from 'react';
+import { Person, Chat, Notifications} from '@mui/icons-material';
+
+
+
+
 const Topbar = () => {
-  const [usersFound, setUsersFound] = useState([]);
-  const [userSearch, setUserSearch] = useState("");
-  const searchForUsers = async (query: any) => {
-    const result = await fetch(`http://localhost:4444/search=${query}`).then(
-      (response: any) => {
-        query && setUsersFound(response.json);
-      }
-    );
-  };
-  const search = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const form = event.target as HTMLFormElement;
-    const input = form.querySelector("#searchText");
-  };
-  useEffect(() => {
-    const query = encodeURIComponent(userSearch);
-    searchForUsers(query);
-  }, [userSearch]);
-  // useEffect(() => {
-  //   (async () => {
-  //     const query = encodeURIComponent(userSearch);
-  //     if (query) {
-  //       const response = await searchForUsers(query);
-  //       setUsersFound(response);
-  //     }
-  //   })();
-  // }), [userSearch];
   return (
-    <div className="topbar">
-      <div className="topLeft">
-        <div className="logo">iBukun</div>
+    <div className='topbarContainer'>
+      <div className="topbarLeft">
+        <span className="logo">ChatApp</span>
       </div>
-      <div className="topCenter">
+
+      <div className="topbarCenter">
         <div className="searchbar">
-          <SearchOutlinedIcon />
-          <form
-            className="searchForm"
-            onSubmit={(event) => search(event)}
-          ></form>
-          <input type="text" id="searchText" />
-          <button>Search</button>
+          {/* <Search className="searchIcon" /> */}
+          <input
+            placeholder="Search for friend, post or video"
+            className="searchInput"
+          />
         </div>
+      </div>  
+      <div className="topbarRight">
+        <div className="topbarLinks">
+          <span className="topbarLink">Home</span>
+          <span className="topbarLink">Timeline</span>
+        </div>
+        <div className="topbarIcons">
+          <div className="topbarIconItem">
+            <Person />
+            <span className="topbarIconBadge">1</span>
+          </div>
+          <div className="topbarIconItem">
+            <Chat />
+            <span className="topbarIconBadge">2</span>
+          </div>
+          <div className="topbarIconItem">
+            <Notifications />
+            <span className="topbarIconBadge">1</span>
+          </div>
+        </div>
+          <img src="" alt="" />
       </div>
-      <div className="topbarRight"></div>
     </div>
-  );
-};
-export default Topbar;
+  )
+}
+
+export default Topbar
