@@ -7,6 +7,7 @@ import DemoPage from "./pages/demo-page/DemoPage";
 import HomeDemo from "./pages/home-demo/HomeDemo";
 import NotFoundPage from "./pages/not-found-page/NotFoundPage";
 import { selectUser } from "./redux/userSlice";
+import Topbar from "./topbar/Topbar";
 
 function App() {
   // const dispatch = useDispatch();
@@ -25,6 +26,10 @@ function App() {
           path="/register"
           element={user ? <MessengerPage /> : <RegisterPage />}
         /> */}
+        <Route
+          path="/topbar"
+          element={user ? <Topbar /> : <Topbar />}
+        />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </div>
