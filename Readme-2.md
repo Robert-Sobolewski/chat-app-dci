@@ -5,10 +5,28 @@ Used technologies:
 <ol>
 <li>html</li>
 <li>scss</li>
-<li>typescript</li>
-<li>redux</li>
 
+Areas to be realised:
 
+Topbar
+Body components
+Sidebar components
+Rightside components
+Login / Registration
+Profile
+PAGES:
+
+Login / Registration
+Messages
+Feed (share, Post,etc)
+Profile
+FUNCTIONALITIES:
+
+Follow and unfollow users
+Like and dislike posts
+Fetching users, friends
+Messages,
+Images, Video and Audio
 </ol>
 
 ## Getting Started with Vite
